@@ -1,19 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/distance_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dystans (km)" />
+
+    <EditText
+        android:id="@+id/duration_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Czas trwania (min)" />
+
+    <EditText
+        android:id="@+id/calories_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kalorie" />
+
+
+    <SeekBar
+        android:id="@+id/intensity_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/intensity_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Intensywność: Niska" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/activity_type_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/type_walk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spacer" />
+
+        <RadioButton
+            android:id="@+id/type_run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bieg" />
+
+        <RadioButton
+            android:id="@+id/type_strength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trening siłowy" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/add_activity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj aktywność" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/save_to_json_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapisz do JSON" />
+
+    <Button
+        android:id="@+id/load_from_json_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wczytaj z JSON" />
+</LinearLayout>
